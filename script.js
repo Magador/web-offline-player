@@ -62,6 +62,7 @@ function addVideo(video) {
   const index = playlist.length
   listItem.querySelector('.playlist-play-element').addEventListener('click', _ => {
     player.src = URL.createObjectURL(playlist[index])
+    currentPlayState.index = index
     play()
   })
   listItem.querySelector('.playlist-title').textContent = video.name

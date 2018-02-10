@@ -88,6 +88,7 @@ input.player-controls[type=range]::-webkit-slider-runnable-track {
   left: 0;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   pointer-events: none;
   visibility: hidden;
   background: hsla(0, 0%, 5%, .75);
@@ -104,13 +105,14 @@ input.player-controls[type=range]::-webkit-slider-runnable-track {
 .playlist {
   padding: 0;
   margin: 0;
+  overflow: scroll;
 }
 
 .playlist-item {
   display: flex;
   flex-flow: row nowrap;
   height: 3rem;
-  background: hsl(0, 0%, 20%);
+  background: hsla(0, 0%, 20%, .5);
   font: 700 1em sans-serif;
   color: white;
   line-height: 1rem;
@@ -119,7 +121,7 @@ input.player-controls[type=range]::-webkit-slider-runnable-track {
 .playlist-play-element {
   border: none;
   font: 700 1rem sans-serif;
-  background: hsl(0, 0%, 20%);
+  background: hsla(0, 0%, 20%, .5);
   color: white;
   height: 100%;
   padding: .5rem;
