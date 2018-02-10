@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Playlist Player Web</title>
+  <link rel="stylesheet" type="text/css" href="defaults.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="player-system">
+    <div class="player-wrapper">
+      <video class="player">player</video>
+    </div>
+    <div class="player-controls-display">
+      <button class="player-controls play-pause">Play</button>
+      <button class="player-controls mute-unmute">🔊</button>
+      <input class="player-controls volume-control" type="range" max="1" step="0.05" value="1">
+      <span class="player-controls time-display">-:-- / -:--</span>
+      <input class="player-controls time-control" type="range" max="1" step="any" value="0" disabled>
+      <button class="player-controls open-playlist">Playlist</button>
+    </div>
+    <div class="playlist-display">
+      <ul class="playlist">
+        
+      </ul>
+      <button class="close-playlist">Fermer</button>
+    </div>
+  </div>
+  <span class="notification"></span>
+  <template id="playlist-item-template">
+    <li class="playlist-item">
+      <button class="playlist-play-element">▶️</button>
+      <span class="playlist-title"></span>
+    </li>
+  </template>
+  <script type="text/javascript" src="./script.js" async defer></script>
+</body>
+</html>

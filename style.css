@@ -1,0 +1,163 @@
+.dropzone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: hsla(0, 0%, 50%, .5);
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+html {
+  background-color: #242424;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-size: .875rem;
+}
+
+.player-system {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.player-wrapper {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-controls-display {
+  position: absolute;
+  width: 100vw;
+  height: 4rem;
+  bottom: 0;
+  display: flex;
+  align-items: stretch;
+}
+
+.player-controls {
+  border: none;
+  font: 700 1rem sans-serif;
+  background: hsl(0, 0%, 33%);
+  color: white;
+  padding: 1rem;
+  min-width: 4rem;
+  cursor: pointer;
+}
+
+.volume-control {
+  width: 6rem;
+}
+
+.play-pause {
+  min-width: 8rem;
+}
+
+.time-display {
+  text-align: center;
+  line-height: 2rem;
+  min-width: 6rem;
+}
+
+.time-control {
+  flex-grow: 1;
+}
+
+input.player-controls[type=range]::-webkit-slider-thumb {
+  background: hsl(0, 0%, 21%);
+}
+
+input.player-controls[type=range]::-webkit-slider-runnable-track {
+  background: #828282;
+}
+
+.playlist-display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  visibility: hidden;
+  background: hsla(0, 0%, 5%, .75);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.playlist-display.visible {
+  pointer-events: all;
+  visibility: visible;
+}
+
+.playlist {
+  padding: 0;
+  margin: 0;
+}
+
+.playlist-item {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 3rem;
+  background: hsl(0, 0%, 20%);
+  font: 700 1em sans-serif;
+  color: white;
+  line-height: 1rem;
+}
+
+.playlist-play-element {
+  border: none;
+  font: 700 1rem sans-serif;
+  background: hsl(0, 0%, 20%);
+  color: white;
+  height: 100%;
+  padding: .5rem;
+  width: 3rem;
+}
+
+.playlist-play-element:hover {
+  background: hsl(0, 0%, 15%);
+}
+
+.playlist-title {
+  display: block;
+  padding: 1rem;
+  padding-left: 0;
+  flex-grow: 1;
+}
+
+.close-playlist {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: none;
+  font: 700 1rem sans-serif;
+  background: hsl(0, 0%, 33%);
+  color: white;
+  padding: 1rem;
+  min-width: 4rem;
+  cursor: pointer;
+  height: 4rem;
+}
+
+.close-playlist, .open-playlist {
+  min-width: 6rem;
+}
+
+.player {
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100%;
+  background: black;
+}
