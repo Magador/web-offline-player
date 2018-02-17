@@ -74,8 +74,12 @@ function play() {
   if (playlist.length === 0)
     return
 
-  if (player.currentSrc == '' || player.ended)
+  if (player.currentSrc == '' || player.ended) {
     player.src = URL.createObjectURL(playlist[currentPlayState.index])
+    sendNotification(playlist[currentPlayState.index].name)
+  }
+
+  setPlaylistPlayingDisplay()
 
   return player.play()
 }
@@ -173,6 +177,20 @@ closePlaylist.addEventListener('click', _ => {
   playlistOpened = false
 })
 
-function sendNotification(name) {
-  
+const notification = document.querySelector('.notification')
+
+notification.addEventListener('animationend', _ => {
+  notification.classList.remove('visible')
+  notification.textContent = ''
+})
+
+function sendNotification(content) {
+  notification.textContent = content.toString()
+  notification.classList.add('visible')
+}
+
+function setPlaylistPlayingDisplay() {
+  for(const item of Array.from(playlistList.querySelectorAll('.playing')))
+    item.classList.remove('playing')
+  playlistList.children[currentPlayState.index].classList.add('playing')
 }
